@@ -65,7 +65,7 @@ public class SimpleClassTest {
     public void testVarHandleGetInt() throws Exception {
         SimpleClass simpleObject = new SimpleClass(1);
         VarHandle handle = MethodHandles.lookup().findFieldVarHandle(SimpleClass.class, "intField", int.class);
-        Object varHandleResult = handle.get(simpleObject);
+        int varHandleResult =  (int) handle.get(simpleObject);
         Assert.assertEquals(1, varHandleResult);
     }    
 
